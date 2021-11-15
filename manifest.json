@@ -1,0 +1,27 @@
+{
+    "name": "Leetcode timer",
+    "description": "Timer.",
+    "version": "1.0",
+    "manifest_version": 2,
+    "background" : {
+        "scripts" : ["./background.js"],
+        "persistent": true
+      },
+      "permissions": ["tabs"],
+      "browser_action":{
+          "default_popup":"popup.html"
+      },
+      "content_scripts": [
+        {
+          "matches": [
+            "https://leetcode.com/problems/*",
+            "https://leetcode.com/explore/learn/card/*"
+          ],
+          "run_at" : "document_idle",
+
+          "js": ["content.js"]
+        }
+      ]
+    
+
+  }
